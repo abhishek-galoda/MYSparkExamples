@@ -18,7 +18,7 @@ object SparkMain {
     PI.pi(sc)
 
     //Parse CSV  and list the insurance policies saved by count in desc order
-//    ParseCSV.groupByColumn(sc)
+    ParseCSV.policiesSoldByCounty(sc)
 
     //Parse CSV and get the Latitude and Longitudes
     HeatMap.getLatitudeAndLongitude(sc)
