@@ -3,6 +3,5 @@
 target/
 *.jar
 .gitignore
-output/
-build.sbt
 project/
+
