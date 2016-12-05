@@ -1,7 +1,8 @@
-import CalculatePI.PI
-import ParseCSV.ParseCSVGroupByColumn
+import calculatePI.PI
+import googleheatmap.HeatMap
+import parseCSV.ParseCSV
 import SparkStreaming.LogStreamer
-import WordCount.WordCount
+import wordcount.WordCount
 import org.apache.spark.{SparkContext, _}
 
 object SparkMain {
@@ -10,15 +11,17 @@ object SparkMain {
     val conf = new SparkConf().setAppName("Spark_Examples")
     val sc = new SparkContext(conf)
 
+    //count the number of words in a file
     WordCount.wordCount(sc)
+
+    //Calculate the value of  PI
     PI.pi(sc)
-    ParseCSVGroupByColumn.groupByColumn(sc)
 
+    //Parse CSV  and list the insurance policies saved by count in desc order
+//    ParseCSV.groupByColumn(sc)
+
+    //Parse CSV and get the Latitude and Longitudes
+    HeatMap.getLatitudeAndLongitude(sc)
   }
-
-
-
-
-
 
 }

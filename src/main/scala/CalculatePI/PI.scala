@@ -1,4 +1,4 @@
-package CalculatePI
+package calculatePI
 
 import org.apache.spark.SparkContext
 

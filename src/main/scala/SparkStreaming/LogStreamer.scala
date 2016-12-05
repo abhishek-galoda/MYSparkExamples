@@ -9,16 +9,19 @@ import org.apache.spark.streaming.twitter._
 
 object LogStreamer {
 
-  def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("Spark_Examples")
-    val ssc = new StreamingContext(conf, Seconds(20))
+  def logStreamer(sc: SparkContext) {
+
+    val ssc = new StreamingContext(sc, Seconds(20))
 
     val fileStream = ssc.textFileStream("file:///C:/Karaf/instances/defaultIntegration1/data/log/karaf.log")
 
     val count=fileStream.flatMap(line => line.split("\n")).filter(x => x.contains("INFO"))
+    println("Total number of line having INFO is :"+ count.count())
 
-    count.saveAsTextFiles("SPARK_HOME/logger"+ System.currentTimeMillis())
+    val webservices=count.filter(x => x.contains("Inbound Message")).count()
+    println("Total number of web services are :"+ webservices)
 
+    webservices.print()
     ssc.start()
     ssc.awaitTerminationOrTimeout(200000)
 
