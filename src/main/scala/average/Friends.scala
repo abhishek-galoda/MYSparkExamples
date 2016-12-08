@@ -1,11 +1,11 @@
-package parseCSV
+package average
 
 import org.apache.spark.SparkContext
 
 import scala.reflect.io.Path
 
 
-object FakeFriends {
+object Friends {
 
   def friendsByAge(sc: SparkContext): Unit = {
 

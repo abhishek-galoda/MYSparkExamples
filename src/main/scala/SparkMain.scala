@@ -1,7 +1,10 @@
+import insurance.InsurancePolicies
 import calculatePI.PI
 import googleheatmap.HeatMap
-import parseCSV.{FakeFriends, InsurancePolicies}
-import SparkStreaming.LogStreamer
+import average.Friends
+import sparkstreaming.LogStreamer
+import test.Weather
+import weather.WeatherData
 import wordcount.WordCount
 import org.apache.spark.{SparkContext, _}
 
@@ -24,7 +27,10 @@ object SparkMain {
     HeatMap.getLatitudeAndLongitude(sc)
 
     //Get average number of Friends by age
-    FakeFriends.friendsByAge(sc)
+    Friends.friendsByAge(sc)
+
+    //Get Minimum Data per weather station
+    WeatherData.minWeatherReportedByStation(sc)
   }
 
 }

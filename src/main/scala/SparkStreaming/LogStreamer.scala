@@ -1,4 +1,4 @@
-package SparkStreaming
+package sparkstreaming
 
 import org.apache.hadoop.io.{Text, LongWritable}
 import org.apache.hadoop.mapred.TextInputFormat
