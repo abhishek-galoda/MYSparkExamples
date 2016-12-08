@@ -9,3 +9,5 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % "2.0.2"
 libraryDependencies +="org.apache.spark" %% "spark-streaming" % "2.0.2"
 
 libraryDependencies += "org.apache.spark" % "spark-streaming-twitter_2.11" % "1.5.2"
+
+libraryDependencies += "com.typesafe" % "config" % "1.3.0"

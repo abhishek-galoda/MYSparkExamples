@@ -5,7 +5,7 @@ import org.apache.spark.rdd.RDD
 
 import scala.reflect.io.Path
 
-object ParseCSV {
+object InsurancePolicies {
 
   def policiesSoldByCounty(sc: SparkContext) {
 
@@ -19,8 +19,8 @@ object ParseCSV {
       .countByValue().toSeq.sortWith( _._2 > _._2)//.foreach(println)
 
 
-    Path("output/PoliciesSoldBycounty").deleteRecursively()
 
+    Path("output/PoliciesSoldBycounty").deleteRecursively()
     sc.parallelize(policiesSoldByCounty).coalesce(1).saveAsTextFile("output/PoliciesSoldBycounty")
 
 
