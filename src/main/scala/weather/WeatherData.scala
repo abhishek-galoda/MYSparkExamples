@@ -1,7 +1,7 @@
 package weather
 
 /**
-  * Created by abhishekg on 08/12/2016.
+  * Created by abhishekg on 08/09/2016.
   */
 import org.apache.spark.SparkContext
 
@@ -26,8 +26,6 @@ object WeatherData {
     val stationTemps=onlyMinTemp.map(x => (x._1,x._3.toFloat))
 
     val results=stationTemps.reduceByKey((x,y) => if(x<y) x else y).collect()
-
-
 
     sc.parallelize(results).coalesce(1).saveAsTextFile("output/MinWeatherByStation")
 

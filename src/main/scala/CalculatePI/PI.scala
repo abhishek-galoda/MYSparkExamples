@@ -3,7 +3,7 @@ package calculatePI
 import org.apache.spark.SparkContext
 
 /**
-  * Created by ABHISHEKG on 18/11/2016.
+  * Created by ABHISHEKG on 18/09/2016.
   */
 object PI {
 
