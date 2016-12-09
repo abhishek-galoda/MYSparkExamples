@@ -19,7 +19,7 @@ object TotalSpentByCustomer {
     //Get ID and Amount
     val rdd = inputData.map(getCustomerIDandAmount)
 
-    val results =rdd.reduceByKey((x,y) => x +y)
+    val results =rdd.reduceByKey(_+_)
 
     val sortedResults=results.map(x => (x._2,x._1)).sortByKey()
 
