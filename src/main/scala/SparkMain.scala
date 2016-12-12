@@ -3,6 +3,7 @@ import calculatePI.PI
 import customersorder.TotalSpentByCustomer
 import googleheatmap.HeatMap
 import insurance.InsurancePolicies
+import marvel.SuperHero
 import org.apache.spark.{SparkContext, _}
 import weather.WeatherData
 import wordcount.WordCount
@@ -36,6 +37,10 @@ object SparkMain {
 
     //get Total amount spent by a customer
     TotalSpentByCustomer.totalAmountSpentByCustomer(sc)
+
+    //Most Popular Marvel SuperHero
+    SuperHero.mostPopularHero(sc)
+
   }
 
 }

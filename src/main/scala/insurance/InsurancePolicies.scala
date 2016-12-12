@@ -9,7 +9,7 @@ object InsurancePolicies {
 
   def policiesSoldByCounty(sc: SparkContext) {
 
-    val logFile = "src/main/resources/InsuranceSample/Insurance_Sample.csv" // Should be some file on your system
+    val logFile = "src/main/resources/InsuranceSample/Insurance_Sample.csv"
     val inputData = sc.textFile(logFile).cache()
     val withoutHeader = dropHeader(inputData)
 
